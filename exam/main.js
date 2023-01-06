@@ -533,10 +533,14 @@ function clickOnMakeAnApplication(event) {
     document.querySelector('.modal-make-name-route').innerHTML = "Название маршрута: " + searchById(globalListRoutes, selectRoute).name;
     document.querySelector('.modal-first-additional-option').checked = false;
     document.querySelector('.modal-second-additional-option').checked = false;
-    document.querySelector('.modal-data').valueAsDate = null;
-    document.querySelector('.modal-time').value = null;
+    let nowDate = new Date();
+    var day = ("0" + nowDate.getDate()).slice(-2);
+    var month = ("0" + (nowDate.getMonth() + 1)).slice(-2);
+    console.log(nowDate.getFullYear() + "-" + day + "-" + month);
+    document.querySelector('.modal-data').value = nowDate.getFullYear() + "-" + day + "-" + month;
+    document.querySelector('.modal-time').value = "09:00";
     document.querySelector('.modal-select-time').selectedIndex = 0;
-    document.querySelector('.modal-number-people').value = null;
+    document.querySelector('.modal-number-people').value = "1";
     costCalculation();
 }
 
