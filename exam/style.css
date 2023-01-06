@@ -1,0 +1,12 @@
+.btn {
+    margin: 0 2px 0 2px;
+}
+
+.select-route,
+.select-guide {
+    background-color: orange;
+}
+
+.form-check-label {
+    opacity: 100 !important;
+}
