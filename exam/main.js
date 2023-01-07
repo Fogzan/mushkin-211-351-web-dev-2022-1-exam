@@ -24,6 +24,7 @@ function showAlert(error, color) {
     btn.setAttribute("aria-label", "Close");
     alert.append(btn);
     alerts.append(alert);
+    setTimeout(() => alert.remove(), 4000);
 }
 
 // Сортировка маршрутов 
@@ -107,6 +108,16 @@ function loadNumberPages(numberPage, maxPages) {
     page6.classList.remove("d-none");
     page3.classList.add("active");
 
+    if (numberPage == 0) {
+        page0.classList.add("d-none");
+        page1.classList.add("d-none");
+        page2.classList.add("d-none");
+        page3.classList.add("d-none");
+        page4.classList.add("d-none");
+        page5.classList.add("d-none");
+        page6.classList.add("d-none");
+        page3.classList.add("active");
+    }
     if (numberPage == 1) {
         page0.classList.add("d-none");
         page1.classList.add("d-none");
@@ -291,13 +302,21 @@ function startSortGuides() {
 // Поиск маршрутов по Достопримечательностям
 function searchByAttractions(event) {
     let listRoutes = startSortRoutes();
-    loadRoutes(1, listRoutes);
+    if (listRoutes.length == 0) {
+        loadRoutes(0, listRoutes);
+    } else {
+        loadRoutes(1, listRoutes);
+    }
 }
 
 // Поиск маршрутов по названию
 function searchByName(event) {
     let listRoutes = startSortRoutes();
-    loadRoutes(1, listRoutes);
+    if (listRoutes.length == 0) {
+        loadRoutes(0, listRoutes);
+    } else {
+        loadRoutes(1, listRoutes);
+    }
 }
 
 // Загрузка с сервера списка гидов
@@ -536,7 +555,7 @@ function clickOnMakeAnApplication(event) {
     let nowDate = new Date();
     var day = ("0" + nowDate.getDate()).slice(-2);
     var month = ("0" + (nowDate.getMonth() + 1)).slice(-2);
-    console.log(nowDate.getFullYear() + "-" + day + "-" + month);
+    //console.log(nowDate.getFullYear() + "-" + day + "-" + month);
     document.querySelector('.modal-data').value = nowDate.getFullYear() + "-" + day + "-" + month;
     document.querySelector('.modal-time').value = "09:00";
     document.querySelector('.modal-select-time').selectedIndex = 0;

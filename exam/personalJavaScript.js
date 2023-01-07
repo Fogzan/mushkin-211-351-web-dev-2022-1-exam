@@ -20,6 +20,7 @@ function showAlert(error, color) {
     btn.setAttribute("aria-label", "Close");
     alert.append(btn);
     alerts.append(alert);
+    setTimeout(() => alert.remove(), 4000);
 }
 
 // Загрузка количество страниц и выбранной страницы (на вход: количество страниц)
