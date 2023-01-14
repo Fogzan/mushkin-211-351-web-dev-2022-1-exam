@@ -240,7 +240,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5 modalLabel" id="modalLabel">Оформление заявки</h1>
+                    <h1 class="modal-title fs-5 modal-label" id="modal-label">Оформление заявки</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -250,7 +250,7 @@
                         <div class="d-flex flex-row flex-wrap py-1">
                             <div class="px-2 py-1">
                                 <div>Дата экскурсии:</div>
-                                <input type="date" class="modal-data">
+                                <input type="date" class="modal-date">
                             </div>
                             <div class="px-2 py-1">
                                 <div>Время начала:</div>
@@ -277,6 +277,7 @@
                                 <label class="form-check-label" for="firstAdditionalOption">Использовать скидку для
                                     пенсионеров.</label>
                                 <div>Стоимость уменьшается на 25%.</div>
+                                <div class="view-first-addition"></div>
                             </div>
                             <div class="py-1">
                                 <input class="form-check-input modal-second-additional-option" type="checkbox" value=""
@@ -284,6 +285,7 @@
                                 <label class="form-check-label" for="secondAdditionalOption">Трансфер до ближайших
                                     станций метро после экскурсии.</label>
                                 <div>Увеличивает стоимость на 25% в выходные дни и на 30% в будние.</div>
+                                <div class="view-second-addition"></div>
                             </div>
                         </div>
                         <div class="modal-price py-3">Итоговая стоимость:</div>
